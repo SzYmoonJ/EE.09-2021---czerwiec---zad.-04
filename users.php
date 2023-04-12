@@ -2,7 +2,7 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Panel administratora</title>
-	<link  href="styl4.css" rel="stylesheet" />
+	<link rel="stylesheet" href="styl4.css"/>
 </head>
 <body>
 	<header>
