@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-	<meta charset="utf-8" />
+	<meta charset="UTF-8"/>
 	<title>Panel administratora</title>
 	<link  href="styl4.css" rel="stylesheet" />
 </head>
@@ -38,7 +38,11 @@
 			$q1 = 'SELECT osoby.id, imie, nazwisko, rok_urodzenia, opis, zdjecie, hobby.nazwa FROM `osoby` JOIN hobby ON Hobby_id=hobby.id WHERE osoby.id ="'.$_POST["ajdi"].'";';
 			$res1 = $con -> query($q1);
 			$re = $res1 -> fetch_all(MYSQLI_ASSOC);
-			echo "<h2>".$re[0]["id"].". "."</h2>";
+			echo "<h2>".$re[0]["id"].". ".$re[0]["imie"]."&nbsp;".$re[0]["nazwisko"]."</h2> <br>";
+			echo "<img src=".$re[0]["zdjecie"]." alt=".$re[0]["id"]."> <br>";
+			echo "<p> Rok urodzenia: ".$re[0]["rok_urodzenia"]."</p>";
+			echo "<p> Opis: ".$re[0]["opis"]."</p>";
+			echo "<p> Hobby: ".$re[0]["nazwa"]."</p>";
 			$con-> close();
 		};
 		?>
