@@ -4,6 +4,14 @@
 body{
 	margin: 0px;
 }
+hr{
+	border-color: black;
+	border-width: 1px;
+}
+img{
+	height: 100px;
+	width: 100px;
+}
 header, footer {
 	background-color: #AF4448;
 	color: white;

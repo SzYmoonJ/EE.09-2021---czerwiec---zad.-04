@@ -14,7 +14,6 @@
 			$con = new mysqli("127.0.0.1", "root", "", "dane4");
 			$q = 'SELECT id, imie, nazwisko, rok_urodzenia, zdjecie FROM `osoby` LIMIT 30;';
 			$res = $con -> query($q);
-			$con-> close();
 			$list = $res -> fetch_all(MYSQLI_ASSOC);
 			for ($i=0; $i<count($list);$i++){
 				$wiek = 2023-intval($list[$i]["rok_urodzenia"]);
@@ -30,11 +29,19 @@
 	<div class="rightpanel">
 		<h4>Podaj id użytkownika</h4>
 		<form method="POST">
-			<?php
-			
-			echo '<button type="submit">ZOBACZ</button>'
-			?>
+			<input name="ajdi" id="ajdi" type="number">
+			<button type="submit">ZOBACZ</button>
 		</form>
+		<hr>
+		<?php
+		if (isset($_POST["ajdi"])){
+			$q1 = 'SELECT osoby.id, imie, nazwisko, rok_urodzenia, opis, zdjecie, hobby.nazwa FROM `osoby` JOIN hobby ON Hobby_id=hobby.id WHERE osoby.id ="'.$_POST["ajdi"].'";';
+			$res1 = $con -> query($q1);
+			$re = $res1 -> fetch_all(MYSQLI_ASSOC);
+			echo "<h2>".$re[0]["id"].". "."</h2>";
+			$con-> close();
+		};
+		?>
 	</div>
 	<footer>
 		<p>Stronę wykonał: xxxxxxxxSJ</p>
