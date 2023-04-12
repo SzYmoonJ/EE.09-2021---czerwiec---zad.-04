@@ -1,0 +1,35 @@
+﻿html{
+	font-family: Helvetica;
+}
+body{
+	margin: 0px;
+}
+header, footer {
+	background-color: #AF4448;
+	color: white;
+	text-align: center;
+	height: 20px;
+}
+footer{
+	clear: both;
+}
+.leftpanel, .rightpanel {
+	background-color: #FFA4A2;
+	height: 650px;
+	width: 50%;
+}
+.leftpanel{
+	float:left;
+}
+.rightpanel {
+	float: right;
+}
+h4{
+	margin: 0px;
+}
+button {
+	background-color: #AF4448;
+	color: white;
+	padding: 5px;
+	margin: 10px;
+}
